@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Paramètres</title>
+</head>
+<body>
+    <h2>PARAMETRES</h2>
+    <a href="/" id="btn-retour">Retour</a>
+    <div class="settings">
+        <div class="button-row">
+            <button id="btn-oui">✔</button>
+            <button id="btn-non">✘</button>
+            <div id="musique-choix">
+                Musique : <span id="musique-status"></span>
+            </div>
+        </div>
+        
+        <div class="button-row">
+            <button id="btn-effets-oui">✔</button>
+            <button id="btn-effets-non">✘</button>
+            <div id="effets-choix">
+                Effets Sonores : <span id="effets-status"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateUI() {
+            const musiqueChoix = localStorage.getItem('musique');
+            const musiqueStatusElement = document.getElementById('musique-status');
+            const effetsChoix = localStorage.getItem('effets');
+            const effetsStatusElement = document.getElementById('effets-status');
+
+            if (musiqueChoix === 'Oui') {
+                musiqueStatusElement.textContent = 'Activé';
+            } else {
+                musiqueStatusElement.textContent = 'Désactivé';
+            }
+
+            if (effetsChoix === 'Oui') {
+                effetsStatusElement.textContent = 'Activé';
+            } else {
+                effetsStatusElement.textContent = 'Désactivé';
+            }
+        }
+
+        document.getElementById('btn-oui').addEventListener('click', function() {
+            localStorage.setItem('musique', 'Oui');
+            updateUI();
+        });
+
+        document.getElementById('btn-non').addEventListener('click', function() {
+            localStorage.setItem('musique', 'Non');
+            updateUI();
+        });
+
+        document.getElementById('btn-effets-oui').addEventListener('click', function() {
+            localStorage.setItem('effets', 'Oui');
+            updateUI();
+        });
+
+        document.getElementById('btn-effets-non').addEventListener('click', function() {
+            localStorage.setItem('effets', 'Non');
+            updateUI();
+        });
+
+        window.onload = updateUI;
+    </script>
+</body>
+</html>

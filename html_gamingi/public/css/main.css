@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #0F0F0F;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/background2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+h2 {
+  font-family: 'MedievalSharp', serif;
+  font-size: 70px;
+  color: #ffffff;
+  text-shadow: 15px 20px 10px rgb(136, 34, 14);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 50px;
+  background-color: rgba(19, 19, 42, 0.478);
+  border-radius: 10px;
+  padding: 30px;
+  width: 1000px;
+  text-align: center;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* Align buttons and text to the left */
+  margin: 10px 0;
+  width: 100%; /* Ensure full width */
+}
+
+#btn-oui, #btn-non, #btn-effets-oui, #btn-effets-non {
+  background-color: rgba(18, 115, 37, 0.58);
+  padding: 10px;
+  font-size: 40px;
+  color: white;
+  border-radius: 10px;
+  margin: 0 10px; /* Add space between buttons */
+}
+
+#btn-non, #btn-effets-non {
+  background-color: rgba(253, 0, 0, 0.58);
+}
+
+#musique-choix, #effets-choix {
+  margin-left: 20px; /* Add space between buttons and text */
+  font-size: 40px;
+}
+
+
+#btn-retour {
+  position: absolute; 
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#btn-retour:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
